@@ -1,0 +1,19 @@
+image-alpha-001: A model that generates high-resolution images of common objects, animals, and scenes. This model can generate images in a variety of styles and is trained on a wide range of image types.
+
+image-alpha-001-limited: A model that generates low-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-001 but is limited to generating smaller, less detailed images.
+
+image-alpha-002: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-001 but is trained on a larger dataset and can generate more diverse and varied images.
+
+image-alpha-003: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-002 but is trained on an even larger dataset and can generate even more diverse and varied images.
+
+image-alpha-004: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-003 but is trained on a dataset that includes a wider range of image types, including more abstract and stylized images.
+
+image-alpha-001-1024: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-001 but is trained to generate larger images with a size of 1024x1024 pixels.
+
+image-alpha-002-1024: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-002 but is trained to generate larger images with a size of 1024x1024 pixels.
+
+image-alpha-003-1024: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-003 but is trained to generate larger images with a size of 1024x1024 pixels.
+
+image-alpha-004-1024: A model that generates high-resolution images of common objects, animals, and scenes. This model is similar to image-alpha-004 but is trained to generate larger images with a size of 1024x1024 pixels.
+
+These models can be used to generate a wide range of images, including objects, animals, scenes, and abstract images. You can specify which model you want to use by setting the model parameter in the request to the name of the desired model.

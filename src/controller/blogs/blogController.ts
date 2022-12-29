@@ -1,18 +1,19 @@
 import { Configuration, OpenAIApi } from "openai";
 
-const Chat = async (req, res) => {
+const getBlogPost = async (req, res) => {
   try {
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
 
     const openai = new OpenAIApi(configuration);
-
-    const prompt = req.body.prompt;
+    const keyword = req.body.keyword;
+    const prompt = `Write a blog post about the following keywords: ${keyword}`;
+    const model = "text-davinci-003";
 
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: `${prompt}`,
+      model: model,
+      prompt: prompt,
       temperature: 0.5,
       max_tokens: 4000,
       top_p: 1,
@@ -23,7 +24,7 @@ const Chat = async (req, res) => {
     res.status(200).json({
       status: 200,
       type: "success",
-      message: "Promt Response get Successfully",
+      message: "Blog Post generated Successfully.",
       data: response.data.choices[0].text,
     });
   } catch (error) {
@@ -35,4 +36,4 @@ const Chat = async (req, res) => {
   }
 };
 
-export default { Chat };
+export default getBlogPost;

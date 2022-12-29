@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 
-const Chat = async (req, res) => {
+const getSeoContent = async (req, res) => {
   try {
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
@@ -8,13 +8,17 @@ const Chat = async (req, res) => {
 
     const openai = new OpenAIApi(configuration);
 
-    const prompt = req.body.prompt;
+    const title = req.body.title;
+    const description = req.body.description;
+
+    const prompt = `Generate meta tags for a website with the following title and description: Title: ${title} Description: ${description}`;
+    const model = "text-davinci-002";
 
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: `${prompt}`,
+      model: model,
+      prompt: prompt,
       temperature: 0.5,
-      max_tokens: 4000,
+      max_tokens: 2048,
       top_p: 1,
       frequency_penalty: 0.5,
       presence_penalty: 0,
@@ -23,7 +27,7 @@ const Chat = async (req, res) => {
     res.status(200).json({
       status: 200,
       type: "success",
-      message: "Promt Response get Successfully",
+      message: "SEO Content generated Successfully.",
       data: response.data.choices[0].text,
     });
   } catch (error) {
@@ -35,4 +39,4 @@ const Chat = async (req, res) => {
   }
 };
 
-export default { Chat };
+export default getSeoContent;
